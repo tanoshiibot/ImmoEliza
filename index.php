@@ -16,7 +16,7 @@
 <nav class="navbar navbar-light purple lighten-4 mb-4">
 
   <!-- Navbar brand -->
-  <a class="navbar-brand" href="#">Navbar</a>
+  <a class="navbar-brand" href="#">ImmoEliza</a>
 
   <!-- Collapse button -->
   <button class="navbar-toggler toggler-example" type="button" data-toggle="collapse" data-target="#navbarSupportedContent1"
@@ -45,7 +45,9 @@
 <!--/.Navbar-->
 </header>
 <main>
-    <h1>Trouver une propriéte en Walonie</h1>
+<div class="container-fluid">
+    <h1 class="text-center">Trouver une propriéte en Walonie</h1>
+</div>
 <!--CANVAS-->  
 <section> 
         
