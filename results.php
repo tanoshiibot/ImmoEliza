@@ -20,9 +20,16 @@
 
       // 1. Sanitisation
       // ---------------
-      //$cp = filter_var($_POST['cp'], FILTER_SANITIZE_...);
-      //$rue = filter_var($_POST['rue'], FILTER_SANITIZE_...); 
-      //$numero = filter_var($_POST['numero'], FILTER_SANITIZE_...);
+   
+      // anti xss
+      $cp = filter_var($_POST["cp"], FILTER_SANITIZE_STRING);
+      $rue = filter_var($_POST["rue"], FILTER_SANITIZE_STRING);
+      $numero = filter_var($_POST["numero"], FILTER_SANITIZE_STRING);     
+   
+      // trim enlève les blancs à gauche et à droite
+      $cp = trim($cp);
+      $rue = trim($rue);
+      $numero = trim($numero);
 
       // 2. Validation
       // -------------
@@ -37,15 +44,13 @@
         echo "There are mistakes!";
         print_r($errors);
         exit;
-      }
-
-      echo 'Test';
-      echo nl2br();
-      echo '<pre>';
-      print_r($_POST);
-
+      } 
+                   
       // If we get here, it's because everything's fine, we can do the next step
-      //...
+      // Fetch API with our data
+      echo nl2br("\n".$cp);      
+      echo nl2br("\n".$rue);      
+      echo nl2br("\n".$numero);  
 
       // 4. Feedback, Display the response interface.
       // --------------------------------------------
