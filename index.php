@@ -10,7 +10,29 @@
     <link rel="stylesheet" href="./assets/css/style.css?v=<?php echo time(); ?>">
 </head>
 <body>
+<header>
+        <p>ImmoEliza</p>
+        <!--menu hamburger-->
 
+    </header>
+    <main>
+        <h1>Trouver une propriéte en Walonie</h1>
+     <!--CANVAS-->  
+    <section> 
+        
+
+    </section>
+    <!--fin CANVA-->
+    
+    <!--**  FORM  **-->
+    <section>
+
+    </section>
+    <!--fin-->
+    </main>
+    <footer>
+
+    </footer>
     <script src="./assets/js/script.js"></script>
 </body>
 </html>
