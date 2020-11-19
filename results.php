@@ -11,6 +11,47 @@
 </head>
 <body>
 
+  <?php
+    // This condition checks if form is submitted...
+    if (isset($_POST) && !empty($_POST) ){
+
+      // we initiate an array that will contain any potential errors.
+      $errors = array();
+
+      // 1. Sanitisation
+      // ---------------
+      //$cp = filter_var($_POST['cp'], FILTER_SANITIZE_...);
+      //$rue = filter_var($_POST['rue'], FILTER_SANITIZE_...);
+      //$numero = filter_var($_POST['numero'], FILTER_SANITIZE_...);
+
+      // 2. Validation
+      // -------------
+      //if ... $errors['cp'] = "Ce code postal est invalide"
+      //if ... $errors['rue'] = "Cette rue est invalide"
+      //if ... $errors['numero'] = "Ce numéro est invalide"
+
+      
+      // 3. execution
+      // ------------
+      if (count($errors)> 0){
+        echo "There are mistakes!";
+        print_r($errors);
+        exit;
+      }
+
+      echo 'Test';
+      print_r($_POST);
+
+      // If we get here, it's because everything's fine, we can do the next step
+      //...
+
+      // 4. Feedback, Display the response interface.
+      // --------------------------------------------
+
+    }
+
+  ?>
+
     <script src="./assets/js/script.js"></script>
 </body>
 </html>
