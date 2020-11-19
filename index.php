@@ -13,7 +13,7 @@
 <header>           
 <!--Navbar-->
 
-<<<<<<< HEAD
+
 <nav class="navbar navbar-light purple lighten-4 mb-4">
 
   <!-- Navbar brand -->
