@@ -53,46 +53,38 @@
 <section>
     <div class="container-fluid" id="content">
         <div class="row justify-content-center" id="content-row">            
-            <div class="col-9">
-                <div class="card card-search">
-                    <div class="position-sticky pt-2">
-                        <div class="card-header text-center">remplis les coordonnées</div>
-                            <div class="card-body">
-                                <div class="tab-content" id="myTabContent">    
-                                    <div class="tab-pane fade show active" id="search" role="tabpanel" aria-labelledby="seach-tab">
-                                        <div class="card-text text-center">                                
-                                            <div class="form_post">
-                                                
-                                                <form action="results.php" method="post">
-                                                    <div class="container">
-                                                    <div class="  justify-content-center pt-2">
-                                                    <label for="cp">Code Postal:</label>
-                                                    <input type="text" class="form-control" id="cp" name="cp" size="10">
-                                                    </div>
+            <div class="card position-sticky pt-2 col-9">
+                <div class="card-header text-center">remplis les coordonnées</div>
+                    <div class="card-body">
+                        <div class="tab-content" id="myTabContent">    
+                            <div class="card-text text-center">                                
+                                <div class="form_post">
+                                    <form action="results.php" method="post">
+                                        <div class="container">
+                                            <div class="  justify-content-center pt-2">
+                                                <label for="cp">Code Postal:</label>
+                                                <input type="text" class="form-control" id="cp" name="cp" size="10">
+                                            </div>
 
-                                                    <div class="  justify-content-center pt-2">
-                                                    <label class="form-check-label" for="rue">Rue:</label>                                                  
-                                                    <input type="text" class="form-control" id="rue" name="rue" size="15">
-                                                    </div>
+                                            <div class="  justify-content-center pt-2">
+                                                <label class="form-check-label" for="rue">Rue:</label>                                                  
+                                                <input type="text" class="form-control" id="rue" name="rue" size="15">
+                                            </div>
 
-                                                    <div class="  justify-content-center pt-2">
-                                                    <label for="numero">Numéro:</label>
-                                                    <input type="text" class="form-control" id="numero" name="numero" size="11">
-                                                    </div>
-                                                    
-                                                    <input type="submit" value="Submit">
-                                                </div>
-                                                </form>
-                                            </div>        
-                                        </div>                                            
-                                    </div>
+                                            <div class="  justify-content-center pt-2">
+                                                <label for="numero">Numéro:</label>
+                                                <input type="text" class="form-control" id="numero" name="numero" size="11">
+                                            </div>
+                                            <input type="submit" value="Submit">
+                                        </div>
+                                    </form>
                                 </div>
-                            </div>   
-                        </div>          
-                    </div>      
+                            </div>
+                        </div>      
+                    </div>
                 </div>
             </div>
-        </div>
+        </div>  
     </div>
 </section>
 <!--fin CANVA-->
