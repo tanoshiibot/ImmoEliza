@@ -1,0 +1,22 @@
+{
+  "name": "immoeliza",
+  "version": "1.0.0",
+  "description": "Travail de groupe BeCode",
+  "main": "index.php",
+  "scripts": {
+    "test": "git"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tanoshiibot/ImmoEliza.git"
+  },
+  "author": "Dorian Storella, Gaetano Di Salvo, Olivia Fantinel, Joffrey Bienvenu",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tanoshiibot/ImmoEliza/issues"
+  },
+  "homepage": "https://github.com/tanoshiibot/ImmoEliza#readme",
+  "dependencies": {
+    "three": "^0.122.0"
+  }
+}
