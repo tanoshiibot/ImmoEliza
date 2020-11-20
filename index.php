@@ -51,23 +51,38 @@
 </div>
 <!--CANVAS-->  
 <section>
+    <div class="container-fluid" id="content">
+        <div class="row content-row">
+            <div class="card card-search">
+                <div class="position-sticky pt-3">
+                    <div class="card-header">Titre</div>
+                        <div class="card-body">
+                            <div class="col-5"></div>                          
+                            <div class="col-7">
+                                <div class="form_post">
+                                    <form action="results.php" method="post">
+                                        <label for="cp">Code Postal:</label>
+                                        <input type="text" id="cp" name="cp" size="10">
+                                        <br>
+                                        
+                                        <label for="rue">Rue:</label>
+                                        <input type="text" id="rue" name="rue" size="20">
+                                        <br>
 
-    <div class="form_post">
-        <form action="results.php" method="post">
-            <label for="cp">Code Postal:</label>
-            <input type="text" id="cp" name="cp" size="10">
-            <br>
+                                        <label for="numero">Numéro:</label>
+                                        <input type="text" id="numero" name="numero" size="10">
+                                        <br>
 
-            <label for="rue">Rue:</label>
-            <input type="text" id="rue" name="rue" size="40">
-            <br>
-
-            <label for="numero">Numéro:</label>
-            <input type="text" id="numero" name="numero" size="10">
-            <br>
-
-            <input type="submit" value="Submit">
-        </form>
+                                        <input type="submit" value="Submit">
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>   
+                    </div>          
+                </div>  
+            </div>
+        </div>
     </div>
 
 </section>
