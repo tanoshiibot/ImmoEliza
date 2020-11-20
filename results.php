@@ -147,17 +147,28 @@
       // json decode
       $array_house = json_decode($result_house_collection, true); 
 
-      echo nl2br("\n");
-      echo "Les numéros des maisons de cette rue sont : ";
-      echo nl2br("\n");
-      print_r($array_house);
+      // check if user numero of house is in the array
+      // ---------------------------------------------
+      if (array_key_exists ($numero, $array_house)){
+        echo "Le numéro de maison existe dans l'API";
+      } else {
+        die("Le numéro de maison n'existe pas dans l'API !");
+      }
       echo nl2br("\n");
 
-      
-      
-
+      // get value of key representing the unique house 
+      // ----------------------------------------------
+      $id_house = $array_house[$numero];     
+           
       // 4. Feedback, Display the response interface.
       // --------------------------------------------
+      // envoi de id_house finale dans le champ <p id="id_house">
+      // il servira pour le relais js 3D https://api.wallonia.ml/v1/model/$id_house
+
+      echo "l'ID de la maison est : ";
+      echo "<p id = 'id_house'>".$id_house."</p>";
+      echo nl2br("\n");
+
 
     } else {
       echo nl2br ('Non Valide : ni le code postal, ni la rue et ni le numéro ne peuvent être vide.');
