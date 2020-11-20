@@ -53,7 +53,7 @@
 <section>
     <div class="container-fluid" id="content">
         <div class="row justify-content-center" id="content-row">            
-            <div class="card position-sticky pt-2 col-9">
+            <div class="card position-sticky pt-3 col-12 col-sm-8 col-md-8 col-lg-6 ">
                 <div class="card-header text-center">remplis les coordonnées</div>
                     <div class="card-body">
                         <div class="tab-content" id="myTabContent">    
@@ -75,7 +75,7 @@
                                                 <label for="numero">Numéro:</label>
                                                 <input type="text" class="form-control" id="numero" name="numero" size="11">
                                             </div>
-                                            <input type="submit" value="Submit">
+                                            <input type="submit" class="btn btn-success" value="Submit">
                                         </div>
                                     </form>
                                 </div>
