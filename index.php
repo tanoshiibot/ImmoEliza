@@ -52,15 +52,15 @@
 <!--CANVAS-->  
 <section>
     <div class="container-fluid" id="content">
-        <div class="row justify-content-center" id="content-row">            
-            <div class="card position-sticky pt-3 col-12 col-sm-8 col-md-8 col-lg-6 ">
+        <div class="row justify-content-center border border-primary" id="content-row">            
+            <div class="card position-sticky  pt-3 col-12 col-sm-8 col-md-8 col-lg-6 ">
                 <div class="card-header text-center">remplis les coordonnées</div>
-                    <div class="card-body">
+                    <div class="card-body border border-primary">
                         <div class="tab-content" id="myTabContent">    
                             <div class="card-text text-center">                                
                                 <div class="form_post">
                                     <form action="results.php" method="post">
-                                        <div class="container">
+                                        <div class="container btn btn-secondary">
                                             <div class="  justify-content-center pt-2">
                                                 <label for="cp">Code Postal:</label>
                                                 <input type="text" class="form-control" id="cp" name="cp" size="10">
@@ -75,7 +75,7 @@
                                                 <label for="numero">Numéro:</label>
                                                 <input type="text" class="form-control" id="numero" name="numero" size="11">
                                             </div>
-                                            <input type="submit" class="btn btn-success" value="Submit">
+                                            <input type="submit" class="btn btn-success btn-sm" value="Submit">
                                         </div>
                                     </form>
                                 </div>
