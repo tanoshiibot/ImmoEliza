@@ -14,10 +14,10 @@
 <!--Navbar-->
 
 
-<nav class="navbar navbar-light purple lighten-4 mb-4">
+<nav class="navbar navbar-light btn btn-dark lighten-4 mb-4">
 
   <!-- Navbar brand -->
-  <a class="navbar-brand" href="#">ImmoEliza</a>
+  <a class="navbar-brand" href="#"><span class="btn btn-warning">ImmoEliza</span></a>
 
   <!-- Collapse button -->
   <button class="navbar-toggler toggler-example" type="button" data-toggle="collapse" data-target="#navbarSupportedContent1"
@@ -28,11 +28,11 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent1">
 
     <!-- Links -->
-    <ul class="navbar-nav mr-auto">
+    <ul class="navbar-nav mr-auto btn btn-warning">
       <li class="nav-item active">
         <a class="nav-link" href="#">Acceuil <span class="sr-only">(current)</span></a>
       </li>
-      <li class="nav-item">
+      <li class="nav-item active">
         <a class="nav-link" href="#">Information</a>
       </li>
       
@@ -52,27 +52,27 @@
 <!--CANVAS-->  
 <section>
     <div class="container-fluid" id="content">
-        <div class="row justify-content-center border border-primary" id="content-row">            
+        <div class="row justify-content-center" id="content-row">            
             <div class="card position-sticky  pt-3 col-12 col-sm-8 col-md-8 col-lg-6 ">
                 <div class="card-header text-center">remplis les coordonnées</div>
-                    <div class="card-body border border-primary">
+                    <div class="card-body border border-warning">
                         <div class="tab-content" id="myTabContent">    
                             <div class="card-text text-center">                                
                                 <div class="form_post">
                                     <form action="results.php" method="post">
-                                        <div class="container btn btn-secondary">
+                                        <div class="container btn btn-dark">
                                             <div class="  justify-content-center pt-2">
-                                                <label for="cp">Code Postal:</label>
+                                                <label for="cp" >Code Postal:</label>
                                                 <input type="text" class="form-control" id="cp" name="cp" size="10">
                                             </div>
 
                                             <div class="  justify-content-center pt-2">
-                                                <label class="form-check-label" for="rue">Rue:</label>                                                  
+                                                <label - for="rue">Rue:</label>                                                  
                                                 <input type="text" class="form-control" id="rue" name="rue" size="15">
                                             </div>
 
                                             <div class="  justify-content-center pt-2">
-                                                <label for="numero">Numéro:</label>
+                                                <label for="numero"class="yellow" >Numéro:</label>
                                                 <input type="text" class="form-control" id="numero" name="numero" size="11">
                                             </div>
                                             <input type="submit" class="btn btn-success btn-sm" value="Submit">
