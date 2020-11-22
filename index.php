@@ -17,7 +17,7 @@
 <nav class="navbar navbar-light btn btn-dark lighten-4 mb-4">
 
   <!-- Navbar brand -->
-  <a class="navbar-brand" href="#"><span class="btn btn-warning">ImmoEliza</span></a>
+  <a class="navbar-brand" href="#"><img class="btn btn-warning" src="./assets/img/ImmoEliza.png" width="20%"  ></a>
 
   <!-- Collapse button -->
   <button class="navbar-toggler toggler-example" type="button" data-toggle="collapse" data-target="#navbarSupportedContent1"
@@ -50,7 +50,7 @@
     <h1 class="text-center">Trouver une propriéte en Wallonie</h1>
 </div>
 <!--CANVAS-->  
-<section class="coq">
+<section>
     <div class="container-fluid" id="content">
         <div class="row justify-content-center" id="content-row">            
             <div class="card position-sticky  pt-2 col-12 col-sm-8 col-md-8 col-lg-6 ">
