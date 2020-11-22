@@ -47,32 +47,32 @@
 </header>
 <main>
 <div class="container-fluid">
-    <h1 class="text-center">Trouver une propriéte en Walonie</h1>
+    <h1 class="text-center">Trouver une propriéte en Wallonie</h1>
 </div>
 <!--CANVAS-->  
-<section>
+<section class="coq">
     <div class="container-fluid" id="content">
         <div class="row justify-content-center" id="content-row">            
-            <div class="card position-sticky  pt-3 col-12 col-sm-8 col-md-8 col-lg-6 ">
+            <div class="card position-sticky  pt-2 col-12 col-sm-8 col-md-8 col-lg-6 ">
                 <div class="card-header text-center">remplis les coordonnées</div>
-                    <div class="card-body border border-warning">
+                    <div class="card-body">
                         <div class="tab-content" id="myTabContent">    
                             <div class="card-text text-center">                                
                                 <div class="form_post">
                                     <form action="results.php" method="post">
                                         <div class="container btn btn-dark">
                                             <div class="  justify-content-center pt-2">
-                                                <label for="cp" >Code Postal:</label>
+                                                <label for="cp" class="yellow" >Code Postal:</label>
                                                 <input type="text" class="form-control" id="cp" name="cp" size="10">
                                             </div>
 
                                             <div class="  justify-content-center pt-2">
-                                                <label - for="rue">Rue:</label>                                                  
+                                                <label  for="rue" class="yellow" >Rue:</label>                                                  
                                                 <input type="text" class="form-control" id="rue" name="rue" size="15">
                                             </div>
 
                                             <div class="  justify-content-center pt-2">
-                                                <label for="numero"class="yellow" >Numéro:</label>
+                                                <label for="numero"class="yellow"  >Numéro:</label>
                                                 <input type="text" class="form-control" id="numero" name="numero" size="11">
                                             </div>
                                             <input type="submit" class="btn btn-success btn-sm" value="Submit">
