@@ -72,13 +72,11 @@
       // Test si $variable est un code postal
       // d'abord on peut caster la var en numérique puisque le cp belge vas de 1000 à 9999 (4 chiffres)
       $cp = intval($cp);
-      echo '$cp : '.$cp;
-      echo nl2br("\n");
-
+      
       if (preg_match("#^[0-9]{4}$#",$cp)){
-          echo "le CP est valide.";
+          //echo "le CP est valide.";
       } else {
-        die("Le CP n'est pas valide.");    
+        die("Le CP n'est pas valide. (Veuillez encoder un CP valide numérique entre 1000 et 9999).");    
       }
           
       
