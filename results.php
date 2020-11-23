@@ -65,10 +65,8 @@
 
       // 2. Validation
       // -------------
-      //if ... $errors['cp'] = "Ce code postal est invalide"
-      //if ... $errors['rue'] = "Cette rue est invalide"
-      //if ... $errors['numero'] = "Ce numéro est invalide"
-
+      
+      // validation CP
       // Test si $variable est un code postal
       // d'abord on peut caster la var en numérique puisque le cp belge vas de 1000 à 9999 (4 chiffres)
       $cp = intval($cp);
@@ -78,8 +76,11 @@
       } else {
         die("Le CP n'est pas valide. (Veuillez encoder un CP valide numérique entre 1000 et 9999).");    
       }
-          
-      
+
+      // amélioration de l'expérience d'encodage coté utilisateur      
+      // on supprime les blancs en trop !
+      $rue = preg_replace('#[\s]+#', ' ', $rue);
+            
       // 3. execution
       // ------------
       if (count($errors)> 0){
