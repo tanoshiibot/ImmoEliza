@@ -13,29 +13,21 @@
       // function declaration
       // --------------------
       function get_api_output($p_url){
-        //debug
-        //echo '$p_url : ' .$p_url;
-        //echo nl2br("\n");
-
-        // setup handle
-        $handle = curl_init();
-        // Set the url
         $url = $p_url;
-        // setopt
-        curl_setopt($handle, CURLOPT_URL, $url);
-        // Set the result output to be a string.
-        curl_setopt($handle, CURLOPT_RETURNTRANSFER, true);
-        // set the output
-        $output = curl_exec($handle);
-        // close handle        
-        curl_close($handle);
+        $data = array('key1' => 'value1', 'key2' => 'value2');
 
-        //debug
-        //echo '$output : ' .$output;
-        //echo nl2br("\n");
-
-        // return
-        return $output;
+        // use key 'http' even if you send the request to https://...
+        $options = array(
+            'http' => array(
+                'header'  => "Content-type: application/x-www-form-urlencoded\r\n",
+                'method'  => 'POST',
+                'content' => http_build_query($data)
+            )
+        );
+        $context  = stream_context_create($options);
+        $result = file_get_contents($url, false, $context);
+        if ($result === FALSE) { /* Handle error */ };
+        return $result;
       }
       
       // 1. Sanitisation
@@ -88,7 +80,7 @@
                         
         // Etape 1: Point d’entrée, les code postaux
         // -----------------------------------------
-        $result_cp_collection = get_api_output("https://static.wallonia.ml/file/wallonia-lidar/web/postal_codes.json");
+        $result_cp_collection = get_api_output("http://static.wallonia.ml/file/wallonia-lidar/web/postal_codes.json");
 
         // decode string output json to php object or php associative array ("key" => "value")
         // ----------------------------------------------------------------
@@ -109,7 +101,7 @@
           // -------------------------------------
           // ok now that we have the cp
           // let us get all the street of that cp
-          $result_street_collection = get_api_output("https://static.wallonia.ml/file/wallonia-lidar/web/$cp.json");
+          $result_street_collection = get_api_output("http://static.wallonia.ml/file/wallonia-lidar/web/$cp.json");
           // json decode
           $array_street = json_decode($result_street_collection, true); 
                 
@@ -134,7 +126,7 @@
             // -----------------------------------------
             // ok now that we have the cp and the street
             // let us get all the number of house in that street
-            $result_house_collection = get_api_output("https://static.wallonia.ml/file/wallonia-lidar/web/$cp/$id_street.json");
+            $result_house_collection = get_api_output("http://static.wallonia.ml/file/wallonia-lidar/web/$cp/$id_street.json");
             // json decode
             $array_house = json_decode($result_house_collection, true); 
 
