@@ -177,12 +177,8 @@
 <header>           
 <!--Navbar-->
 
-<<<<<<< HEAD
 
 <nav class="navbar navbar-light btn btn-dark lighten-4 mb-4">
-=======
-<nav class="navbar navbar-light purple lighten-4 mb-4">
->>>>>>> post-API
 
   <!-- Navbar brand -->
   <a class="navbar-brand" href="#"><img class="btn btn-warning" src="./assets/img/ImmoEliza.png" width="20%"  ></a>
@@ -227,23 +223,6 @@
                         <div class="tab-content" id="myTabContent">    
                             <div class="card-text text-center">                                
                                 <div class="form_post">
-<<<<<<< HEAD
-                                    <form action="results.php" method="post">
-                                        <div class="container btn btn-dark">
-                                            <div class="  justify-content-center pt-2">
-                                                <label for="cp" class="yellow" >Code Postal:</label>
-                                                <input type="text" class="form-control" id="cp" name="cp" size="10">
-                                            </div>
-
-                                            <div class="  justify-content-center pt-2">
-                                                <label  for="rue" class="yellow" >Rue:</label>                                                  
-                                                <input type="text" class="form-control" id="rue" name="rue" size="15">
-                                            </div>
-
-                                            <div class="  justify-content-center pt-2">
-                                                <label for="numero"class="yellow"  >Numéro:</label>
-                                                <input type="text" class="form-control" id="numero" name="numero" size="11">
-=======
                                     <form action="index.php" method="post">
                                         <div class="container btn btn-secondary">
                                             <div class="  justify-content-center pt-2">
@@ -259,7 +238,6 @@
                                             <div class="  justify-content-center pt-2">
                                                 <label for="numero">Numéro:</label>
                                                 <input type="text" class="form-control" id="numero" name="numero" size="11" value="<?php echo $numero; ?>">
->>>>>>> post-API
                                             </div>
                                             <input type="submit" class="btn btn-success btn-sm" value="submit">
                                         </div>
@@ -306,11 +284,21 @@
 
 ?>
 
+<canvas id="render"></canvas>
+
 <footer>
 
 </footer>
 
     <script src="./assets/js/script.js"></script>
+    <canvas id="render" width=800 height=800></canvas>
+    <script type="text/javascript" src="./assets/js/libs/jszip/dist/jszip.min.js"></script>
+    <script type="text/javascript" src="./assets/js/libs/jszip/dist/jszip-utils.min.js"></script>
+    <script type="module">
+        import * as app from './assets/js/app.module.js';
+        console.log(document.getElementById("id_house").innerText);
+        app.init(document.getElementById("id_house").innerText);
+    </script>
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>    
