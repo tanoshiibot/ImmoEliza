@@ -1,26 +1,67 @@
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital@1&display=swap');
+
 body {
     background-color: #fffbc3;
+    font-family: 'Libre Baskerville', serif;
   }
   
   h1 {
     color: #920505;
   }
-  
+  .container-fluid{
+    width: 90%;
+    
+  } 
   .card {
-    background-color: #f83232;
-    padding: 0.4em;
+    
+    background-color: #fffbc3;
+    width:10%;
+    border:none;  
   }
   
   .card-header {
-    background-color: rgba(255, 255, 85, 0.87);
+     color:#920505;
+    background-color: #fffbc3;
+    font-size:125%;
+    border:none
   }
   
   .card-body {
-    background-color: rgba(255, 255, 85, 0.87);
+    background-color: #fffbc3;
   }
   
   .yellow {
     color: yellow;
   }
+  #content-row {
+    position: relative;
+    width: 100%;
+    display: flex;
+    
+  }
+  #content-row::before{
+    content:"";
+    background-image:url(https://media.discordapp.net/attachments/778896610138259458/780800500173897738/coq.png?width=520&height=560);
+    background-repeat:no-repeat;
+    position: absolute;
+    transform: translateX(100px);
+    
+    height: 32em;   
+    background-size:21em;
+    top:0px;
+    bottom: 0px;
+    left:0px;
+    right:0px;    
+    opacity: 0.45;
+    background-attachment: local, scroll;
+    background-position: bottom right  ;
+    
+  }
+  
+
+
+
+
+
 
 
