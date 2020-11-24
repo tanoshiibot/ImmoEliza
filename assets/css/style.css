@@ -22,4 +22,24 @@ h1 {
 .yellow {
   color: yellow;
 }
+
+#content {
+  background-image: url(http://connaitrelawallonie.wallonie.be/sites/all/themes/w/logo.png);
+  padding: 5em;
+  background-size: 18em;
+  background-repeat: no-repeat;
+  background-attachment: local, scroll;
+  background-position: bottom right;
+}
+
+.navbar-brand {
+  width: auto;
+  text-align: left;
+  padding: 0.8em;
+}
+
+img {
+  max-width: 20%;
+  height: auto;
+}
 /*# sourceMappingURL=style.css.map */
