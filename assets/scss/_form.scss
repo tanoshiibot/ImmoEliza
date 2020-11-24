@@ -8,19 +8,26 @@ body {
   h1 {
     color: #920505;
   }
-  
-  .card {
-    background-color: #f83232;
-    padding: 0.4em;
+  .container-fluid{
+    width: 90%;
     
-    }
+  } 
+  .card {
+    
+    background-color: #fffbc3;
+    width:10%;
+    border:none;  
+  }
   
   .card-header {
-    background-color: rgba(255, 255, 85, 0.87);
+     color:#920505;
+    background-color: #fffbc3;
+    font-size:125%;
+    border:none
   }
   
   .card-body {
-    background-color: rgba(255, 255, 85, 0.87);
+    background-color: #fffbc3;
   }
   
   .yellow {
@@ -34,18 +41,23 @@ body {
   }
   #content-row::before{
     content:"";
-    background-image:url(http://connaitrelawallonie.wallonie.be/sites/all/themes/w/logo.png);
+    background-image:url(https://media.discordapp.net/attachments/778896610138259458/780800500173897738/coq.png?width=520&height=560);
     background-repeat:no-repeat;
     position: absolute;
-        
-    background-size: 15em;
+    transform: translateX(100px);
+    
+    height: 32em;   
+    background-size:21em;
     top:0px;
     bottom: 0px;
     left:0px;
     right:0px;    
-    opacity: 0.65;
+    opacity: 0.45;
     background-attachment: local, scroll;
-    background-position: bottom right  ;}
+    background-position: bottom right  ;
+    
+  }
+  
 
 
 

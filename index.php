@@ -14,10 +14,10 @@
 <!--Navbar-->
 
 
-<nav class="navbar navbar-light btn btn-dark lighten-4 mb-5">
+<nav class="navbar  btn-dark lighten-4 mb-5">
 
   <!-- Navbar brand -->
-  <a class="navbar-brand" href="#"><img class="btn btn-warning" src="./assets/img/ImmoEliza.png"></a>
+  <a class="navbar-brand" href="#"><img class="logo" src="./assets/img/ImmoEliza.png"></a>
 
   <!-- Collapse button -->
   <button class="navbar-toggler btn btn-warning" type="button" data-toggle="collapse" data-target="#navbarSupportedContent1"
@@ -54,7 +54,7 @@
     
     <div class="container-fluid" id="content">         
         <div class="row  justify-content-center  " id="content-row">
-            <div class="card position-sticky mb-5 pt-2 col-12 col-sm-8 col-md-8 col-lg-6 ">
+            <div class="card position-sticky mb-5 pt-2 col-12 col-sm-6 col-md-6 col-lg-6 ">
                 <div class="card-header  text-center">remplis les coordonnées</div>
                     <div class="card-body">
                         <div class="tab-content" id="myTabContent">    
