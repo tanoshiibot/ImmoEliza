@@ -1,5 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital@1&display=swap');
+
 body {
     background-color: #fffbc3;
+    font-family: 'Libre Baskerville', serif;
   }
   
   h1 {
@@ -23,15 +26,27 @@ body {
   .yellow {
     color: yellow;
   }
-  #content {
-    background-image:url(http://connaitrelawallonie.wallonie.be/sites/all/themes/w/logo.png);
-    padding:5em;
-    background-size: 18em;    
-    background-repeat:no-repeat;
-    background-attachment: local, scroll;
-    background-position: bottom right  ;
+  #content-row {
+    position: relative;
+    width: 100%;
+    display: flex;
     
-}
+  }
+  #content-row::before{
+    content:"";
+    background-image:url(http://connaitrelawallonie.wallonie.be/sites/all/themes/w/logo.png);
+    background-repeat:no-repeat;
+    position: absolute;
+        
+    background-size: 15em;
+    top:0px;
+    bottom: 0px;
+    left:0px;
+    right:0px;    
+    opacity: 0.65;
+    background-attachment: local, scroll;
+    background-position: bottom right  ;}
+
 
 
 

@@ -47,15 +47,15 @@
 </header>
 <main>
 <div class="container-fluid">
-    <h1 class="text-center mb-2">Trouver une propriéte en Wallonie</h1>
+    <h1 class="text-center mb-5 ">Trouver une propriéte en Wallonie</h1>
 </div>
 <!--CANVAS-->  
 <section>
     
-    <div class="container-fluid" id="content">            
-        <div class="row  justify-content-center " id="content-row">
-            <div class="card position-sticky  pt-2 col-12 col-sm-8 col-md-8 col-lg-6 ">
-                <div class="card-header text-center">remplis les coordonnées</div>
+    <div class="container-fluid" id="content">         
+        <div class="row  justify-content-center  " id="content-row">
+            <div class="card position-sticky mb-5 pt-2 col-12 col-sm-8 col-md-8 col-lg-6 ">
+                <div class="card-header  text-center">remplis les coordonnées</div>
                     <div class="card-body">
                         <div class="tab-content" id="myTabContent">    
                             <div class="card-text text-center">                                
@@ -87,7 +87,7 @@
             </div>
         </div>  
     </div>
-    
+   
 </section>
 
 <!--fin CANVA-->
