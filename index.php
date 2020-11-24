@@ -13,29 +13,26 @@
       // function declaration
       // --------------------
       function get_api_output($p_url){
-        //debug
-        //echo '$p_url : ' .$p_url;
-        //echo nl2br("\n");
-
-        // setup handle
-        $handle = curl_init();
-        // Set the url
         $url = $p_url;
-        // setopt
-        curl_setopt($handle, CURLOPT_URL, $url);
-        // Set the result output to be a string.
-        curl_setopt($handle, CURLOPT_RETURNTRANSFER, true);
-        // set the output
-        $output = curl_exec($handle);
-        // close handle        
-        curl_close($handle);
+        $data = array('key1' => 'value1', 'key2' => 'value2');
 
-        //debug
-        //echo '$output : ' .$output;
-        //echo nl2br("\n");
-
-        // return
-        return $output;
+        // use key 'http' even if you send the request to https://...
+        $options = array(
+            'http' => array(
+                'header'  => "Content-type: application/x-www-form-urlencoded\r\n",
+                'method'  => 'POST',
+                'content' => http_build_query($data)
+            )
+        );
+        $context  = stream_context_create($options);
+        $result = file_get_contents($url, false, $context);
+        if ($result === FALSE) {
+           /* Handle error */           
+          return null;
+        } else {
+          return $result;
+        }
+        
       }
       
       // 1. Sanitisation
@@ -88,8 +85,12 @@
                         
         // Etape 1: Point d’entrée, les code postaux
         // -----------------------------------------
-        $result_cp_collection = get_api_output("https://static.wallonia.ml/file/wallonia-lidar/web/postal_codes.json");
+        $result_cp_collection = get_api_output("http://static.wallonia.ml/file/wallonia-lidar/web/postal_codes.json");
 
+        if ($result_cp_collection === null){
+          $error_handle['no API connection'] = "No API connection (check your URL API please...)" ;
+        } else {
+          
         // decode string output json to php object or php associative array ("key" => "value")
         // ----------------------------------------------------------------
         // arg2 option not set or set to false will give a php object
@@ -109,58 +110,69 @@
           // -------------------------------------
           // ok now that we have the cp
           // let us get all the street of that cp
-          $result_street_collection = get_api_output("https://static.wallonia.ml/file/wallonia-lidar/web/$cp.json");
-          // json decode
-          $array_street = json_decode($result_street_collection, true); 
-                
-          // to compare data string API, we create new variables in lower caser
-          // rue_lower_case and array_street_lower_case
-          $rue_lower_case = strtolower($rue);
-          $array_street_lower_case = array_change_key_case($array_street,CASE_LOWER);
-        
-          // check if user street is in the array      
-          if (array_key_exists ($rue_lower_case, $array_street_lower_case)){
-            array_push($feedback, "La rue existe dans l'API");
-          } else {
-            $error_handle['rue not exist'] = "La rue n'existe pas dans l'API !";
-          }
-          
-          if(count($error_handle) == 0){
-            // get value of key representing the street            
-            $id_street = $array_street_lower_case[$rue_lower_case];
-            array_push($feedback, "l'ID de la rue est : ".$id_street);
-                        
-            // Etape 3: Obtenir l’id unique de la maison
-            // -----------------------------------------
-            // ok now that we have the cp and the street
-            // let us get all the number of house in that street
-            $result_house_collection = get_api_output("https://static.wallonia.ml/file/wallonia-lidar/web/$cp/$id_street.json");
-            // json decode
-            $array_house = json_decode($result_house_collection, true); 
+          $result_street_collection = get_api_output("http://static.wallonia.ml/file/wallonia-lidar/web/$cp.json");
 
-            // check if user numero of house is in the array
-            // ---------------------------------------------
-            if (array_key_exists ($numero, $array_house)){
-              array_push($feedback, "Le numéro de maison existe dans l'API");
+          if ($result_street_collection === null){
+            $error_handle['no API connection'] = "No API connection (check your URL API please...)" ;
+          } else {  
+            // json decode
+            $array_street = json_decode($result_street_collection, true); 
+                  
+            // to compare data string API, we create new variables in lower caser
+            // rue_lower_case and array_street_lower_case
+            $rue_lower_case = strtolower($rue);
+            $array_street_lower_case = array_change_key_case($array_street,CASE_LOWER);
+          
+            // check if user street is in the array      
+            if (array_key_exists ($rue_lower_case, $array_street_lower_case)){
+              array_push($feedback, "La rue existe dans l'API");
             } else {
-              $error_handle['house number is not into API'] = "Le numéro de maison n'existe pas dans l'API !";
+              $error_handle['rue not exist'] = "La rue n'existe pas dans l'API !";
             }
             
             if(count($error_handle) == 0){
-              // get value of key representing the unique house 
-              // ----------------------------------------------
-              $id_house = $array_house[$numero];     
-                  
-              // 4. Feedback, Display the response interface.
-              // --------------------------------------------
-              // envoi de id_house finale dans le champ <p id="id_house">
-              // il servira pour le relais js 3D https://api.wallonia.ml/v1/model/$id_house
+              // get value of key representing the street            
+              $id_street = $array_street_lower_case[$rue_lower_case];
+              array_push($feedback, "l'ID de la rue est : ".$id_street);
+                          
+              // Etape 3: Obtenir l’id unique de la maison
+              // -----------------------------------------
+              // ok now that we have the cp and the street
+              // let us get all the number of house in that street
+              $result_house_collection = get_api_output("http://static.wallonia.ml/file/wallonia-lidar/web/$cp/$id_street.json");
 
-              array_push($feedback, "l'ID de la maison est : ");
-              array_push($feedback, "<p id = 'id_house'>".$id_house."</p>");              
+              if ($result_house_collection === null){
+                $error_handle['no API connection'] = "No API connection (check your URL API please...)" ;
+              } else {  
+                // json decode
+                $array_house = json_decode($result_house_collection, true); 
+
+                // check if user numero of house is in the array
+                // ---------------------------------------------
+                if (array_key_exists ($numero, $array_house)){
+                  array_push($feedback, "Le numéro de maison existe dans l'API");
+                } else {
+                  $error_handle['house number is not into API'] = "Le numéro de maison n'existe pas dans l'API !";
+                }
+                
+                if(count($error_handle) == 0){
+                  // get value of key representing the unique house 
+                  // ----------------------------------------------
+                  $id_house = $array_house[$numero];     
+                      
+                  // 4. Feedback, Display the response interface.
+                  // --------------------------------------------
+                  // envoi de id_house finale dans le champ <p id="id_house">
+                  // il servira pour le relais js 3D https://api.wallonia.ml/v1/model/$id_house
+
+                  array_push($feedback, "l'ID de la maison est : ");
+                  array_push($feedback, "<p id = 'id_house'>".$id_house."</p>");              
+                }
+              }
             }
           }
         }
+       }
       }
     } else {
       $error_handle['not a valid submission'] = 'Non Valide : ni le code postal, ni la rue et ni le numéro ne peuvent être vide.';      
