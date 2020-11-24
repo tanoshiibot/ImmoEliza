@@ -197,25 +197,26 @@
 <header>           
 <!--Navbar-->
 
-<nav class="navbar navbar-light purple lighten-4 mb-4">
+
+<nav class="navbar  btn-dark lighten-4 mb-5">
 
   <!-- Navbar brand -->
-  <a class="navbar-brand" href="#">ImmoEliza</a>
+  <a class="navbar-brand" href="#"><img class="logo" src="./assets/img/ImmoEliza.png"></a>
 
   <!-- Collapse button -->
-  <button class="navbar-toggler toggler-example" type="button" data-toggle="collapse" data-target="#navbarSupportedContent1"
+  <button class="navbar-toggler btn btn-warning" type="button" data-toggle="collapse" data-target="#navbarSupportedContent1"
     aria-controls="navbarSupportedContent1" aria-expanded="false" aria-label="Toggle navigation"><span class="dark-blue-text"><i
-        class="fas fa-bars fa-1x"></i></span></button>
+        class="navbar-toggler-icon btn btn-warning"></i></span></button>
 
   <!-- Collapsible content -->
   <div class="collapse navbar-collapse" id="navbarSupportedContent1">
 
     <!-- Links -->
-    <ul class="navbar-nav mr-auto">
+    <ul class="navbar-nav mr-auto btn btn-warning">
       <li class="nav-item active">
         <a class="nav-link" href="#">Acceuil <span class="sr-only">(current)</span></a>
       </li>
-      <li class="nav-item">
+      <li class="nav-item active">
         <a class="nav-link" href="#">Information</a>
       </li>
       
@@ -230,15 +231,16 @@
 </header>
 <main>
 <div class="container-fluid">
-    <h1 class="text-center">Trouver une propriéte en Walonie</h1>
+    <h1 class="text-center mb-5 ">Trouver une propriéte en Wallonie</h1>
 </div>
 <!--CANVAS-->  
 <section>
-    <div class="container-fluid" id="content">
-        <div class="row justify-content-center border border-primary" id="content-row">            
-            <div class="card position-sticky  pt-3 col-12 col-sm-8 col-md-8 col-lg-6 ">
-                <div class="card-header text-center">remplis les coordonnées</div>
-                    <div class="card-body border border-primary">
+    
+    <div class="container-fluid" id="content">         
+        <div class="row  justify-content-center  " id="content-row">
+            <div class="card position-sticky mb-5 pt-2 col-12 col-sm-6 col-md-6 col-lg-6 ">
+                <div class="card-header  text-center">remplis les coordonnées</div>
+                    <div class="card-body">
                         <div class="tab-content" id="myTabContent">    
                             <div class="card-text text-center">                                
                                 <div class="form_post">
@@ -269,9 +271,11 @@
             </div>
         </div>  
     </div>
+   
 </section>
+
 <!--fin CANVA-->
-    
+   
 <!--**  FORM  **-->
 <section>
 
