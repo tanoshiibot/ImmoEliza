@@ -297,7 +297,7 @@
   // feed back result or errors, display the response interface.
   // ------------------------------------------------------------
 
-  if ((isset($_POST['rue'])) || (isset($_POST['rue'])) || (isset($_POST['rue']))){
+  if ((isset($_POST['cp'])) || (isset($_POST['rue'])) || (isset($_POST['numero']))){  
    echo '<div id="response">'; 
     echo '<div class="alert alert-success d-flex justify-content-center">';     
     // si pas d'erreur on affiche le petit feedback de succes 
