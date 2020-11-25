@@ -69,7 +69,7 @@
     background-image: url(https://media.discordapp.net/attachments/778896610138259458/780800500173897738/coq.png?width=520&height=560);
     background-repeat: no-repeat;
     position: absolute;
-    height: 42em;
+    height: 45em;
     background-size: 15em;
     top: 0px;
     bottom: 0px;
@@ -93,7 +93,7 @@
     position: absolute;
     -webkit-transform: scaleX(-1);
             transform: scaleX(-1);
-    height: 42em;
+    height: 45em;
     background-size: 15em;
     top: 0px;
     bottom: 0px;
@@ -145,7 +145,7 @@
     background-image: url(https://media.discordapp.net/attachments/778896610138259458/780800500173897738/coq.png?width=520&height=560);
     background-repeat: no-repeat;
     position: absolute;
-    height: 43.2em;
+    height: 44.2em;
     background-size: 17em;
     top: 0px;
     bottom: 0px;
@@ -169,7 +169,7 @@
     position: absolute;
     -webkit-transform: scaleX(-1);
             transform: scaleX(-1);
-    height: 43.2em;
+    height: 44.2em;
     background-size: 17em;
     top: 0px;
     bottom: 0px;
@@ -345,5 +345,47 @@
 img {
   max-width: 70%;
   height: auto;
+}
+
+@media (max-width: 991px) and (min-width: 768px) {
+  .navbar.navbar-9 .navbar-toggler-icon {
+    background-image: url("https://mdbootstrap.com/img/svg/hamburger3.svg?color=00FBD8");
+  }
+  .navbar-brand {
+    width: 20%;
+    text-align: left;
+  }
+  img {
+    max-width: 55%;
+    height: auto;
+  }
+}
+
+@media (max-width: 1199px) and (min-width: 992px) {
+  .navbar.navbar-9 .navbar-toggler-icon {
+    background-image: url("https://mdbootstrap.com/img/svg/hamburger3.svg?color=00FBD8");
+  }
+  .navbar-brand {
+    width: 20%;
+    text-align: left;
+  }
+  img {
+    max-width: 45%;
+    height: auto;
+  }
+}
+
+@media (min-width: 1200px) {
+  .navbar.navbar-9 .navbar-toggler-icon {
+    background-image: url("https://mdbootstrap.com/img/svg/hamburger3.svg?color=00FBD8");
+  }
+  .navbar-brand {
+    width: 20%;
+    text-align: left;
+  }
+  img {
+    max-width: 35%;
+    height: auto;
+  }
 }
 /*# sourceMappingURL=style.css.map */
