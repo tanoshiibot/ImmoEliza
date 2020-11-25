@@ -6,6 +6,7 @@
     // error handle
     // ------------
     $error_handle = [];
+    $debug = [];
     $feedback = [];
     
     // pré validation, les champs doivent exister et ne pas être vide.
@@ -73,15 +74,15 @@
         // If we get here, it's because everything's fine, we can do the next step
         // Fetch API with our data
         // Data from HTML <form>
-        array_push($feedback, "<u><b>Sanitized Data from HTML form</b></u>");                     
-        array_push($feedback, "cp : ".$cp);      
-        array_push($feedback, "rue : ".$rue);      
-        array_push($feedback, "numero : ".$numero);  
+        array_push($debug, "<u><b>Sanitized Data from HTML form</b></u>");                     
+        array_push($debug, "cp : ".$cp);      
+        array_push($debug, "rue : ".$rue);      
+        array_push($debug, "numero : ".$numero);  
         
         // API GET request
         // -----------
         // Base URL: https://static.wallonia.ml/file/wallonia-lidar/web/
-        array_push($feedback, '<u><b>API request</u></b>');
+        array_push($debug, '<u><b>API request</u></b>');
                         
         // Etape 1: Point d’entrée, les code postaux
         // -----------------------------------------
@@ -100,7 +101,7 @@
         // check if user cp is in the array
         // --------------------------------
         if (array_key_exists ($cp, $array_cp)){
-          array_push($feedback, "Le code postal existe dans l'API");
+          array_push($debug, "Le code postal existe dans l'API");
         } else {
           $error_handle['cp not exist'] = "Le code postal n'existe pas dans l'API !";
         }
@@ -125,7 +126,7 @@
           
             // check if user street is in the array      
             if (array_key_exists ($rue_lower_case, $array_street_lower_case)){
-              array_push($feedback, "La rue existe dans l'API");
+              array_push($debug, "La rue existe dans l'API");
             } else {
               $error_handle['rue not exist'] = "La rue n'existe pas dans l'API !";
             }
@@ -133,7 +134,7 @@
             if(count($error_handle) == 0){
               // get value of key representing the street            
               $id_street = $array_street_lower_case[$rue_lower_case];
-              array_push($feedback, "l'ID de la rue est : ".$id_street);
+              array_push($debug, "l'ID de la rue est : ".$id_street);
                           
               // Etape 3: Obtenir l’id unique de la maison
               // -----------------------------------------
@@ -150,7 +151,7 @@
                 // check if user numero of house is in the array
                 // ---------------------------------------------
                 if (array_key_exists ($numero, $array_house)){
-                  array_push($feedback, "Le numéro de maison existe dans l'API");
+                  array_push($debug, "Le numéro de maison existe dans l'API");
                 } else {
                   $error_handle['house number is not into API'] = "Le numéro de maison n'existe pas dans l'API !";
                 }
@@ -160,13 +161,17 @@
                   // ----------------------------------------------
                   $id_house = $array_house[$numero];     
                       
-                  // 4. Feedback, Display the response interface.
+                  // 4. debug, Display the response interface.
                   // --------------------------------------------
                   // envoi de id_house finale dans le champ <p id="id_house">
                   // il servira pour le relais js 3D https://api.wallonia.ml/v1/model/$id_house
 
-                  array_push($feedback, "l'ID de la maison est : ");
-                  array_push($feedback, "<p id = 'id_house'>".$id_house."</p>");              
+                  array_push($debug, "l'ID de la maison est : ");
+                  array_push($debug, '<p id="house">'.$id_house.'</p>');
+
+                  array_push($feedback, "l'ID de la maison a bien été obtenu.");
+                  array_push($feedback, '<p id="house" class="invisible">'.$id_house.'</p>');
+
                 }
               }
             }
@@ -244,7 +249,7 @@
                         <div class="tab-content" id="myTabContent">    
                             <div class="card-text text-center">                                
                                 <div class="form_post">
-                                    <form action="index.php" method="post">
+                                    <form action="index.php#response" method="post">
                                         <div class="container btn btn-secondary">
                                             <div class="  justify-content-center pt-2">
                                                 <label for="cp">Code Postal:</label>
@@ -284,26 +289,29 @@
 </main>
 
 <?php
-  // Feedback, Display the response interface.
-  // -----------------------------------------
+  // feed back result or errors, display the response interface.
+  // ------------------------------------------------------------
 
-  echo '<div style="display: flex; flex-direction: column; justify-content: center;">';
-
-    echo '<div>';
+  if ((isset($_POST['rue'])) || (isset($_POST['rue'])) || (isset($_POST['rue']))){
+   echo '<div id="response">'; 
+    echo '<div class="alert alert-success d-flex justify-content-center">';     
+    // si pas d'erreur on affiche le petit feedback de succes 
+    // pour indiqué que l'on a obtenu l'id unique de la maison.
+    if(count($error_handle) == 0){
+      foreach ($feedback as $value) {
+        echo "<p>$value</p>";    
+      }
+      echo "</div>";
+    } else {
+      // on a un ou plusieurs messages d'erreur à afficher
+      echo '<div class="alert alert-danger d-flex justify-content-center">';
       foreach ($error_handle as $value) {
         echo "<p>$value</p>"; 
       }
-      
-      // si pas d'erreur on affiche les étapes du process 
-      // qui a permit de recevoir l'id unique de la maison.
-      if(count($error_handle) == 0){
-        foreach ($feedback as $value) {
-        echo "<p>$value</p>";    
-        }
-      }
-
-    echo '</div>';
-  echo "</div>";
+      echo '</div>';
+    }        
+   echo '</div>';
+  }
 
 ?>
 
