@@ -1,10 +1,54 @@
+.navbar.navbar-9 .navbar-toggler-icon {
+    background-image: url('https://mdbootstrap.com/img/svg/hamburger3.svg?color=00FBD8');
+}
 .navbar-brand{
-    
+    width: 20%;
     text-align:left;
     
 }
 img {
-    max-width: 24%;
+    max-width: 70%;
     height: auto;
-    
+}
+@media (max-width:991px) and (min-width:768px){
+    .navbar.navbar-9 .navbar-toggler-icon {
+        background-image: url('https://mdbootstrap.com/img/svg/hamburger3.svg?color=00FBD8');
+    }
+    .navbar-brand{
+        width: 20%;
+        text-align:left;
+        
+    }
+    img {
+        max-width: 55%;
+        height: auto;
+    }
+}
+@media (max-width:1199px) and (min-width:992px){
+    .navbar.navbar-9 .navbar-toggler-icon {
+        background-image: url('https://mdbootstrap.com/img/svg/hamburger3.svg?color=00FBD8');
+    }
+    .navbar-brand{
+        width: 20%;
+        text-align:left;
+        
+    }
+    img {
+        max-width: 45%;
+        height: auto;
+    }
+}
+@media(min-width:1200px){
+    .navbar.navbar-9 .navbar-toggler-icon {
+        background-image: url('https://mdbootstrap.com/img/svg/hamburger3.svg?color=00FBD8');
+    }
+    .navbar-brand{
+        width: 20%;
+        text-align:left;
+        
+    }
+    img {
+        max-width: 35%;
+        height: auto;
+    }
 }

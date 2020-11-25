@@ -34,29 +34,7 @@
     .yellow {
       color: yellow;
     }
-    #content-row {
-      position: relative;
-      width: 100%;
-      display: flex;
-      
-    }
-    #content-row::before{
-      content:"";
-      //background-image:url(https://media.discordapp.net/attachments/778896610138259458/780800500173897738/coq.png?width=520&height=560);
-      background-repeat:no-repeat;
-      position: absolute;
-      height: 38em;   
-      background-size:12em;
-      top:0px;
-      bottom: 0px;
-      left:0px;
-      right:45px;    
-      opacity: 0.45;
-      background-attachment: local, scroll;
-      background-position: bottom right  ;
-      align-items: center;
-    }
-  }
+}
 
 @media (max-width:767px) and (min-width:576px){
     body {
@@ -103,7 +81,7 @@
       background-image:url(https://media.discordapp.net/attachments/778896610138259458/780800500173897738/coq.png?width=520&height=560);
       background-repeat:no-repeat;
       position: absolute;
-      height: 42em;   
+      height: 45em;   
       background-size:15em;
       top:0px;
       bottom: 0px;
@@ -125,7 +103,7 @@
       background-repeat: no-repeat;
       position: absolute;
       transform: scaleX(-1);
-      height: 42em;
+      height: 45em;
       background-size:15em;
       top:0px;
       bottom: 0px;
@@ -135,11 +113,8 @@
       background-attachment: local, scroll;
       background-position: bottom right  ;
     }
-  }
-
-  
-
-@media (max-width:991px) and (min-width:768px){ //col lg
+}
+@media (max-width:991px) and (min-width:768px){ 
 body {
     background-color: #fffbc3;
     font-family: 'Libre Baskerville', serif;
@@ -184,7 +159,7 @@ body {
     background-image:url(https://media.discordapp.net/attachments/778896610138259458/780800500173897738/coq.png?width=520&height=560);
     background-repeat:no-repeat;
     position: absolute;
-    height: 43.2em;   
+    height: 44.2em;   
     background-size:17em;
     top:0px;
     bottom: 0px;
@@ -207,7 +182,7 @@ body {
     position: absolute;
     
     transform: scaleX(-1);
-    height: 43.2em;
+    height: 44.2em;
     background-size:17em;
     top:0px;
     bottom: 0px;
@@ -218,7 +193,7 @@ body {
     background-position: bottom right  ;
   }
 }
-@media (max-width:1199px) and (min-width:992px){//col-lg
+@media (max-width:1199px) and (min-width:992px){
 body {
     background-color: #fffbc3;
     font-family: 'Libre Baskerville', serif;
