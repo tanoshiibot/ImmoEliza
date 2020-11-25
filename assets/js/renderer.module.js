@@ -26,7 +26,7 @@ let init = (land, vegetation, houses, offsets) => {
     const near = 0.1;
     const far = 10000;
     camera = new THREE.PerspectiveCamera(fov, aspect, near, far);
-    camera.position.set(0, 40, 30);
+    camera.position.set(0, 10, 30);
     camera.lookAt(0, 0, 0);
 
     // Source: https://github.com/mrdoob/three.js/blob/dev/examples/webgl_lights_hemisphere.html
