@@ -62,6 +62,7 @@ let displayHouse = (houseId, onRenderingComplete) => {
                     renderer.init(meshes[0].value, meshes[1].value, houses, json.offsets)
 
                     renderer.animate()
+                    document.getElementById("loading").remove();
                 })
             })
         })

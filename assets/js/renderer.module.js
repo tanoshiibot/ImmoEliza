@@ -85,9 +85,9 @@ let init = (land, vegetation, houses, offsets) => {
 
             // Allow shadow and translate to (0, 0, 0)
             mesh.receiveShadow = true;
-            mesh.geometry.translate(offsets.house[i].x - averageOffset[0], offsets.house[i].y - averageOffset[1], - offsets.house[i].z)
+            mesh.geometry.translate(offsets.house[i].x - averageOffset[0], offsets.house[i].y - averageOffset[1], - offsets.house[i].z);
             console.log(offsets.house[i].x, offsets.house[i].y, - offsets.house[i].z);
-            mesh.rotation.x = x_rotation
+            mesh.rotation.x = x_rotation;
             mesh_house.add(mesh);
         })
     }

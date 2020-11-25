@@ -235,13 +235,47 @@
 <!--/.Navbar-->
 </header>
 <main>
+
+
+
+<?php
+  // feed back result or errors, display the response interface.
+  // ------------------------------------------------------------
+
+  if ((isset($_POST['cp'])) || (isset($_POST['rue'])) || (isset($_POST['numero']))){  
+   echo '<div id="response">'; 
+    echo '<div class="alert alert-success d-flex justify-content-center">';     
+    // si pas d'erreur on affiche le petit feedback de succes 
+    // pour indiqué que l'on a obtenu l'id unique de la maison.
+    if(count($error_handle) == 0){
+      foreach ($feedback as $value) {
+        echo "<p>$value</p>";    
+      }
+      echo "</div>";
+    } else {
+      // on a un ou plusieurs messages d'erreur à afficher
+      echo '<div class="alert alert-danger d-flex justify-content-center">';
+      foreach ($error_handle as $value) {
+        echo "<p>$value</p>"; 
+      }
+      echo '</div>';
+    }        
+   echo '</div>';
+  }
+
+?>
+
+<div class="d-flex justify-content-center">
+    <p id="loading">Chargement du modèle 3D</p>
+    <div id="canvas"></div>
+</div>
+
 <div class="container-fluid">
     <h1 class="text-center mb-5 ">Trouver une propriéte en Wallonie</h1>
 </div>
 
 <!--CANVAS-->  
 
-<div id="canvas"></div>
 
 <!--fin CANVA-->
 
@@ -293,32 +327,7 @@
 <!--fin-->
 </main>
 
-<?php
-  // feed back result or errors, display the response interface.
-  // ------------------------------------------------------------
 
-  if ((isset($_POST['cp'])) || (isset($_POST['rue'])) || (isset($_POST['numero']))){  
-   echo '<div id="response">'; 
-    echo '<div class="alert alert-success d-flex justify-content-center">';     
-    // si pas d'erreur on affiche le petit feedback de succes 
-    // pour indiqué que l'on a obtenu l'id unique de la maison.
-    if(count($error_handle) == 0){
-      foreach ($feedback as $value) {
-        echo "<p>$value</p>";    
-      }
-      echo "</div>";
-    } else {
-      // on a un ou plusieurs messages d'erreur à afficher
-      echo '<div class="alert alert-danger d-flex justify-content-center">';
-      foreach ($error_handle as $value) {
-        echo "<p>$value</p>"; 
-      }
-      echo '</div>';
-    }        
-   echo '</div>';
-  }
-
-?>
 
 
 
