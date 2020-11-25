@@ -14,18 +14,16 @@
 <!--Navbar-->
 
 
-<nav class="navbar  btn-dark lighten-4 mb-5">
+<nav class="navbar navbar-light navbar-9  btn-dark   mb-5">
 
   <!-- Navbar brand -->
-  <a class="navbar-brand" href="#"><img class="logo" src="./assets/img/ImmoEliza.png"></a>
+  <a class="navbar-brand " href="#"><img class="logo" src="./assets/img/ImmoEliza.png"></a>
 
   <!-- Collapse button -->
-  <button class="navbar-toggler btn btn-warning" type="button" data-toggle="collapse" data-target="#navbarSupportedContent1"
-    aria-controls="navbarSupportedContent1" aria-expanded="false" aria-label="Toggle navigation"><span class="dark-blue-text"><i
-        class="navbar-toggler-icon btn btn-warning"></i></span></button>
-
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent15"
+    aria-controls="navbarSupportedContent15" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
   <!-- Collapsible content -->
-  <div class="collapse navbar-collapse" id="navbarSupportedContent1">
+  <div class="collapse navbar-collapse" id="navbarSupportedContent15">
 
     <!-- Links -->
     <ul class="navbar-nav mr-auto btn btn-warning">
@@ -47,18 +45,18 @@
 </header>
 <main>
 <div class="container-fluid">
-    <h1 class="text-center mb-5 ">Trouver une propriéte en Wallonie</h1>
+    <h1 class="text-center mb-5">Trouver une propriéte en Wallonie</h1>
 </div>
 <!--CANVAS-->  
 <section>
-    
     <div class="container-fluid " id="content"><!--   -->    
-        <div class="row justify-content-center" id="content-row"><div id='img'></div><div id='scaleimg'></div>
-            <div class="card  mb-5 pt-2 col-12 col-sm-8 col-md-8 col-lg-8 ">
-                <div class="card-header  text-center">remplis les coordonnées</div>
-                    <div class="card-body">
-                        <div class="tab-content" id="myTabContent">    
-                            <div class="card-text text-center">                                
+        <div class="row justify-content-center" id="content-row">
+            <div id='img'></div>
+            <div id='scaleimg'></div>
+                <div class="card  mb-5 pt-2 col-12 col-sm-8 col-md-8 col-lg-8 ">
+                    <div class="card-header  text-center">remplis les coordonnées</div>
+                        <div class="card-body">
+                             <div class="card-text text-center">                                
                                 <div class="form_post">
                                     <form action="results.php" method="post">
                                         <div class="container btn btn-dark">
@@ -87,7 +85,6 @@
             </div>
         </div>  
     </div>
-   
 </section>
 
 <!--fin CANVA-->

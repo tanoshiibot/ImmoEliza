@@ -34,28 +34,6 @@
     .yellow {
       color: yellow;
     }
-    #content-row {
-      position: relative;
-      width: 100%;
-      display: flex;
-      
-    }
-    #content-row::before{
-      content:"";
-      //background-image:url(https://media.discordapp.net/attachments/778896610138259458/780800500173897738/coq.png?width=520&height=560);
-      background-repeat:no-repeat;
-      position: absolute;
-      height: 38em;   
-      background-size:12em;
-      top:0px;
-      bottom: 0px;
-      left:0px;
-      right:45px;    
-      opacity: 0.45;
-      background-attachment: local, scroll;
-      background-position: bottom right  ;
-      align-items: center;
-    }
   }
 
 @media (max-width:767px) and (min-width:576px){

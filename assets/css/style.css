@@ -27,30 +27,6 @@
   .yellow {
     color: yellow;
   }
-  #content-row {
-    position: relative;
-    width: 100%;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-  }
-  #content-row::before {
-    content: "";
-    background-repeat: no-repeat;
-    position: absolute;
-    height: 38em;
-    background-size: 12em;
-    top: 0px;
-    bottom: 0px;
-    left: 0px;
-    right: 45px;
-    opacity: 0.45;
-    background-attachment: local, scroll;
-    background-position: bottom right;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-  }
 }
 
 @media (max-width: 767px) and (min-width: 576px) {
@@ -357,12 +333,17 @@
   }
 }
 
+.navbar.navbar-9 .navbar-toggler-icon {
+  background-image: url("https://mdbootstrap.com/img/svg/hamburger3.svg?color=00FBD8");
+}
+
 .navbar-brand {
+  width: 20%;
   text-align: left;
 }
 
 img {
-  max-width: 24%;
+  max-width: 70%;
   height: auto;
 }
 /*# sourceMappingURL=style.css.map */
