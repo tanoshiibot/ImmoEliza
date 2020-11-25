@@ -53,8 +53,8 @@
 <section>
     
     <div class="container-fluid" id="content">         
-        <div class="row  justify-content-center  " id="content-row">
-            <div class="card position-sticky mb-5 pt-2 col-12 col-sm-6 col-md-6 col-lg-6 ">
+        <div class="row  justify-content-center" id="content-row">
+            <div class="card mb-5 pt-2 col-12 col-sm-8 col-md-8 col-lg-8 ">
                 <div class="card-header  text-center">remplis les coordonnées</div>
                     <div class="card-body">
                         <div class="tab-content" id="myTabContent">    
