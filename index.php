@@ -54,7 +54,7 @@
             <div id='img'></div>
             <div id='scaleimg'></div>
                 <div class="card  mb-5 pt-2 col-12 col-sm-8 col-md-8 col-lg-8 ">
-                    <div class="card-header  text-center">remplis les coordonnées</div>
+                    <div class="card-header  text-center">Remplissez le formulaire pour afficher les informations d'une propriété</div>
                         <div class="card-body">
                              <div class="card-text text-center">                                
                                 <div class="form_post">
