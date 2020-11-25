@@ -213,7 +213,13 @@
 <div class="container-fluid">
     <h1 class="text-center mb-5 ">Trouver une propriéte en Wallonie</h1>
 </div>
+
 <!--CANVAS-->  
+
+<div id="canvas"></div>
+
+<!--fin CANVA-->
+
 <section>
     
     <div class="container-fluid" id="content">         
@@ -254,7 +260,6 @@
    
 </section>
 
-<!--fin CANVA-->
    
 <!--**  FORM  **-->
 <section>
@@ -287,20 +292,22 @@
 
 ?>
 
-<canvas id="render"></canvas>
+
 
 <footer>
 
 </footer>
 
     <script src="./assets/js/script.js"></script>
-    <canvas id="render" width=800 height=800></canvas>
+    <canvas id="render" width=400 height=400></canvas>
     <script type="text/javascript" src="./assets/js/libs/jszip/dist/jszip.min.js"></script>
     <script type="text/javascript" src="./assets/js/libs/jszip/dist/jszip-utils.min.js"></script>
     <script type="module">
         import * as app from './assets/js/app.module.js';
+    if (document.getElementById("id_house").innerText) {
         console.log(document.getElementById("id_house").innerText);
         app.init(document.getElementById("id_house").innerText);
+    }
     </script>
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>

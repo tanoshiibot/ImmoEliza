@@ -8,18 +8,21 @@ let canvas, renderer, scene, camera, controls,
 let init = (land, vegetation, houses, offsets) => {
 
     // Canvas definition
-    canvas = document.getElementById('render');
+    canvas = document.createElement('canvas');
+    canvas.setAttribute("id", "render");
+    let render = document.getElementById("canvas");
+    render.appendChild(canvas);
 
     // Renderer definition
-    renderer = new THREE.WebGLRenderer({canvas});
-    renderer.setSize(window.innerWidth, window.innerHeight);
+    renderer = new THREE.WebGLRenderer({canvas, alpha: true });
+    renderer.setSize(300, 300);
 
     // Scene definition
     scene = new THREE.Scene();
 
     // Camera's constants
     const fov = 70;
-    const aspect = window.innerWidth / window.innerHeight;
+    const aspect = 300 / 300;
     const near = 0.1;
     const far = 10000;
     camera = new THREE.PerspectiveCamera(fov, aspect, near, far);
@@ -59,10 +62,16 @@ let init = (land, vegetation, houses, offsets) => {
 
     // Load house PLY
     mesh_house = new THREE.Group();
+
+
+
+
+
     for (let house of houses) {
 
         const i = house.value[0]
         const buffer = house.value[1]
+
 
         LOADERS.ply(buffer, (geometry) => {
 
