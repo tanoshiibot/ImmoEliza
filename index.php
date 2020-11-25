@@ -266,7 +266,6 @@
 ?>
 
 <div class="d-flex justify-content-center">
-    <p id="loading">Chargement du modèle 3D</p>
     <div id="canvas"></div>
 </div>
 

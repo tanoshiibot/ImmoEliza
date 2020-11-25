@@ -9,8 +9,9 @@ let init = (id) => {
 }
 
 let displayHouse = (houseId, onRenderingComplete) => {
-    console.log(houseId)
-
+    let loading = document.createElement("p");
+    loading.innerText = "Chargement du modèle 3D...";
+    document.getElementById("canvas").appendChild(loading);
     new JSZip.external.Promise((resolve, reject) => {
 
         // Load the zip as binary file
@@ -62,7 +63,7 @@ let displayHouse = (houseId, onRenderingComplete) => {
                     renderer.init(meshes[0].value, meshes[1].value, houses, json.offsets)
 
                     renderer.animate()
-                    document.getElementById("loading").remove();
+                    loading.remove();
                 })
             })
         })
