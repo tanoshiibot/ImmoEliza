@@ -332,9 +332,9 @@
     <script type="text/javascript" src="./assets/js/libs/jszip/dist/jszip-utils.min.js"></script>
     <script type="module">
         import * as app from './assets/js/app.module.js';
-    if (document.getElementById("id_house").innerText) {
-        console.log(document.getElementById("id_house").innerText);
-        app.init(document.getElementById("id_house").innerText);
+    if (document.getElementById("house").innerHTML) {
+        console.log(document.getElementById("house").innerHTML);
+        app.init(document.getElementById("house").innerHTML);
     }
     </script>
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>

@@ -64,8 +64,12 @@ let init = (land, vegetation, houses, offsets) => {
     mesh_house = new THREE.Group();
 
 
-
-
+    let averageOffset = [0, 0];
+    for (let house of houses) {
+        const i = house.value[0];
+        averageOffset[0] += offsets.house[i].x / offsets.house.length;
+        averageOffset[1] += offsets.house[i].y / offsets.house.length;
+    }
 
     for (let house of houses) {
 
@@ -81,9 +85,9 @@ let init = (land, vegetation, houses, offsets) => {
 
             // Allow shadow and translate to (0, 0, 0)
             mesh.receiveShadow = true;
-            mesh.geometry.translate(offsets.house[i].x, offsets.house[i].y, - offsets.house[i].z)
+            mesh.geometry.translate(offsets.house[i].x - averageOffset[0], offsets.house[i].y - averageOffset[1], - offsets.house[i].z)
+            console.log(offsets.house[i].x, offsets.house[i].y, - offsets.house[i].z);
             mesh.rotation.x = x_rotation
-
             mesh_house.add(mesh);
         })
     }
