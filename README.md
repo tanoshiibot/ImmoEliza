@@ -9,7 +9,7 @@
 - Deployment : Heroku
 
 ## Introduction
----
+
 This project is a collaboration between the AI and the web dev promotions. The objective of this one is to give you the opportunity to improve your learning of PHP (web dev) || making an API (AI) by solving a real life need: create an app for the real estate agency named ImmoEliza.
 
 Whereas HTML is good to create the visual interface of the form, you will need a backend script to actually process the data and compose the result via an API to be sent to the client.
