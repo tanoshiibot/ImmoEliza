@@ -206,7 +206,7 @@
 <nav class="navbar navbar-light navbar-9  btn-dark   mb-5">
 
   <!-- Navbar brand -->
-  <a class="navbar-brand " href="#"><img class="logo" src="./assets/img/ImmoEliza.png"></a>
+  <a class="navbar-brand " href="#"><img class="logo" src="./assets/img/ImmoEliza.webp"></a>
 
   <!-- Collapse button -->
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent15"
@@ -215,11 +215,11 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent15">
 
     <!-- Links -->
-    <ul class="navbar-nav mr-auto btn btn-warning">
+    <ul class="navbar-nav mr-auto btn">
       <li class="nav-item active">
         <a class="nav-link" href="#">Acceuil <span class="sr-only">(current)</span></a>
       </li>
-      <li class="nav-item active">
+      <li class="nav-item">
         <a class="nav-link" href="#">Information</a>
       </li>
       

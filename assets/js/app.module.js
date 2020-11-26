@@ -16,7 +16,6 @@ let displayHouse = (houseId, onRenderingComplete) => {
 
         // Load the zip as binary file
         JSZipUtils.getBinaryContent('https://api.wallonia.ml/v1/model/' + houseId, (err, data) => {
-
             resolve(data);
         });
     })
@@ -64,6 +63,10 @@ let displayHouse = (houseId, onRenderingComplete) => {
 
                     renderer.animate()
                     loading.remove();
+                    const price = document.createElement("p");
+                    price.innerText = "Estimation de la valeur de la propriété : " + json.meta.price + " €";
+                    document.getElementById("canvas").appendChild(price);
+
                 })
             })
         })
