@@ -1,6 +1,6 @@
 <?php  
   // This condition checks if form is submitted...
-  if ((!isset($_POST['rue'])) || (!isset($_POST['rue'])) || (!isset($_POST['rue']))){
+  if ((!isset($_POST['cp'])) || (!isset($_POST['rue'])) || (!isset($_POST['numero']))){
     //echo 'not yet submitted';      
   } else {   
     // error handle
