@@ -17,7 +17,7 @@ ImmoEliza est une application qui permet de récuperer une modélisation 3D appr
 ## Technologies utilisées
 
 * **HTML/CSS/Bootstrap** - interface (Dorian Storella) ;
-* **PHP** - requête à l'API pour trouver la maison à partir du formulaire (Gaetano Di Salvado) ;
+* **PHP** - requête à l'API pour trouver la maison à partir du formulaire (Gaetano Di Salvo) ;
 * **JS/three.js** - requête à l'API des modèles 3D et visualisation 3D (Joffrey Bienvenu et Olivia Fantinel).
 
 ## Difficultés rencontrées 
